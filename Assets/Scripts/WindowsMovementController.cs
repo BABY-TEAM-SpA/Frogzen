@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class WindowsMovementController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerDownHandler, IPointerExitHandler, IPointerUpHandler
 {
     [SerializeField] public WindowsType windowsType;
     [SerializeField] public WindowsDropArea originalParent;
@@ -12,6 +13,13 @@ public class WindowsMovementController : MonoBehaviour, IBeginDragHandler, IDrag
     private Canvas canvas;
     private CanvasGroup canvasGroup;
 
+    private bool canDrag;
+    private bool hasDrag;
+    [SerializeField] private float holdTime = 3f;
+    [SerializeField] private GameObject loadingParent;
+    [SerializeField] private Image loadingBar;
+    private Coroutine holdCoroutine;
+        
     [Header("Animation Variables")]
     [SerializeField] private LeanTweenType animCurve;
     [SerializeField] [Range(0f,5f)]private float animUpTime;
@@ -39,27 +47,64 @@ public class WindowsMovementController : MonoBehaviour, IBeginDragHandler, IDrag
         PlaceWindow(originalParent);
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
-        canvasGroup.alpha = 0.6f; 
-        canvasGroup.blocksRaycasts = false;
-        transform.SetParent(upperObject);
-        LeanTween.pause(this.gameObject);
-        LeanTween.size(rectTransform, animSize*scaleSizeBig, animUpTime).setEase(animCurve);
+        holdCoroutine = StartCoroutine(HoldRoutine());
+        hasDrag = false;
+        canDrag = false;
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (!canDrag)
+        {
+            if (holdCoroutine != null)
+            {
+                StopCoroutine(holdCoroutine);
+                
+                loadingParent.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        if (!canDrag)
+        {
+            if (holdCoroutine != null)
+            {
+                StopCoroutine(holdCoroutine);
+                loadingParent.gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            if (!hasDrag)
+            {
+                PlaceWindow(originalParent);
+                AnimateDown();
+            }
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        if (canDrag)
+        {
+            hasDrag = true;
+            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        canvasGroup.alpha = 1.0f;
-        canvasGroup.blocksRaycasts = true;
-        PlaceWindow(originalParent);
-        LeanTween.pause(this.gameObject);
-        LeanTween.size(rectTransform, animSize, animDownTime).setEase(animCurve);
+        if (canDrag)
+        {
+            //canvasGroup.alpha = 1.0f;
+            PlaceWindow(originalParent);
+            AnimateDown();
+            canDrag = false;
+        }
+        
     }
     public void PlaceWindow(WindowsDropArea parent)
     {
@@ -70,5 +115,35 @@ public class WindowsMovementController : MonoBehaviour, IBeginDragHandler, IDrag
         originalParent.hasWindow = true;
     }
 
+    private IEnumerator HoldRoutine()
+    {
+        loadingBar.fillAmount = 0f;
+        loadingParent.gameObject.SetActive(true);
+        float elapsedTime = 0f;
+        while (elapsedTime < holdTime)
+        {
+            elapsedTime += Time.deltaTime;
+            loadingBar.fillAmount = elapsedTime / holdTime;
+            yield return null;
+        }
+        transform.SetParent(upperObject);
+        canDrag = true;
+        loadingParent.SetActive(false);
+        AnimateUP();
+    }
 
+    private void AnimateUP()
+    {
+        canvasGroup.blocksRaycasts = false;
+        LeanTween.pause(this.gameObject);
+        LeanTween.size(rectTransform, animSize*scaleSizeBig, animUpTime).setEase(animCurve);
+    }
+
+    private void AnimateDown()
+    {
+        canvasGroup.blocksRaycasts = true;
+        LeanTween.pause(this.gameObject);
+        LeanTween.size(rectTransform, animSize, animDownTime).setEase(animCurve);
+    }
+    
 }
