@@ -108,7 +108,6 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
     }
     public void PlaceWindow(WindowsDropArea parent)
     {
-        originalParent.hasWindow = false;
         transform.SetParent(parent.transform);
         originalParent = parent;
         rectTransform.anchoredPosition = Vector2.zero;
@@ -118,9 +117,11 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
     private IEnumerator HoldRoutine()
     {
         loadingBar.fillAmount = 0f;
+        loadingBar.color = ClimateManager.Instance.currentWeather.removingColorBar;
         loadingParent.gameObject.SetActive(true);
+        float hold = holdTime; //* ClimateManager.Instance.currentWeather.removingMultuplyDelay;
         float elapsedTime = 0f;
-        while (elapsedTime < holdTime)
+        while (elapsedTime < hold)
         {
             elapsedTime += Time.deltaTime;
             loadingBar.fillAmount = elapsedTime / holdTime;
@@ -129,6 +130,7 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
         transform.SetParent(upperObject);
         canDrag = true;
         loadingParent.SetActive(false);
+        originalParent.hasWindow = false;
         AnimateUP();
     }
 
