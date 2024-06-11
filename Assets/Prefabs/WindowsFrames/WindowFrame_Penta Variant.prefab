@@ -199,6 +199,58 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5958878354289810436, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
+      propertyPath: coldColor.b
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958878354289810436, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
+      propertyPath: coldColor.g
+      value: 0.75686276
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958878354289810436, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
+      propertyPath: coldColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958878354289810436, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
+      propertyPath: fillColor.a
+      value: 0.67058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958878354289810436, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
+      propertyPath: fillColor.b
+      value: 0.47843137
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958878354289810436, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
+      propertyPath: fillColor.g
+      value: 0.92941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958878354289810436, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
+      propertyPath: fillColor.r
+      value: 0.1764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958878354289810436, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
+      propertyPath: warmColor.b
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958878354289810436, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
+      propertyPath: warmColor.g
+      value: 0.7647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958878354289810436, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
+      propertyPath: warmColor.r
+      value: 0.007843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958878354289810436, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
+      propertyPath: frozenColor.b
+      value: 0.43529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958878354289810436, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
+      propertyPath: frozenColor.g
+      value: 0.2784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958878354289810436, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
+      propertyPath: frozenColor.r
+      value: 0.9372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958878354289810436, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
       propertyPath: currentFrog.coldnessFrogMultiplier
       value: 1
       objectReference: {fileID: 0}

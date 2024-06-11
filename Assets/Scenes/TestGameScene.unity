@@ -247,33 +247,45 @@ PrefabInstance:
       value: WindowFrame_Curved
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 5783432956988888695}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -485,33 +497,45 @@ PrefabInstance:
       value: WindowFrame_Square
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 5872444777110846863}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -633,33 +657,45 @@ PrefabInstance:
       value: WindowFrame_Curved
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 8336153752820139010}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -771,33 +807,45 @@ PrefabInstance:
       value: WindowFrame_Square
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 7541586796926331632}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1040,9 +1088,41 @@ PrefabInstance:
       value: WindowFrame_Penta
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.b
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.g
+      value: 0.75686276
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.b
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.g
+      value: 0.7647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.r
+      value: 0.007843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 7759871044108068196}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1165,33 +1245,45 @@ PrefabInstance:
       value: WindowFrame_Curved
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 267338964740757080}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1669,33 +1761,45 @@ PrefabInstance:
       value: WindowFrame_Square
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 2772614603632072715}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1798,9 +1902,41 @@ PrefabInstance:
       value: WindowFrame_Penta
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.b
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.g
+      value: 0.75686276
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.b
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.g
+      value: 0.7647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.r
+      value: 0.007843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 2535319743402386791}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2294,9 +2430,41 @@ PrefabInstance:
       value: WindowFrame_Penta
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.b
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.g
+      value: 0.75686276
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.b
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.g
+      value: 0.7647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.r
+      value: 0.007843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 2882006986468676747}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2694,33 +2862,45 @@ PrefabInstance:
       value: WindowFrame_Curved
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 2396477106495088818}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3147,9 +3327,41 @@ PrefabInstance:
       value: WindowFrame_Penta
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.b
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.g
+      value: 0.75686276
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.b
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.g
+      value: 0.7647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.r
+      value: 0.007843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 1359170079696268884}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3362,33 +3574,45 @@ PrefabInstance:
       value: WindowFrame_Square
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 6412218609372288197}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3496,9 +3720,41 @@ PrefabInstance:
       value: WindowFrame_Penta
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.b
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.g
+      value: 0.75686276
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.b
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.g
+      value: 0.7647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.r
+      value: 0.007843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 5904104128839921662}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3621,33 +3877,45 @@ PrefabInstance:
       value: WindowFrame_Square
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 8860136879013193884}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3969,33 +4237,45 @@ PrefabInstance:
       value: WindowFrame_Curved
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 770448011462865642}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4672,9 +4952,41 @@ PrefabInstance:
       value: WindowFrame_Penta
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.b
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.g
+      value: 0.75686276
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.b
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.g
+      value: 0.7647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.r
+      value: 0.007843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 9134574837317252769}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4781,33 +5093,45 @@ PrefabInstance:
       value: WindowFrame_Curved
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 979806171182810875}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5206,9 +5530,41 @@ PrefabInstance:
       value: WindowFrame_Penta
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.b
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.g
+      value: 0.75686276
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.b
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.g
+      value: 0.7647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.r
+      value: 0.007843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 3359300109193421979}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5692,33 +6048,45 @@ PrefabInstance:
       value: WindowFrame_Curved
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 7348455461094511027}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5935,33 +6303,45 @@ PrefabInstance:
       value: WindowFrame_Square
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 7893153345128737977}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6380,33 +6760,45 @@ PrefabInstance:
       value: WindowFrame_Square
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 379302218207329030}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8676344276245302563, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6774,33 +7166,45 @@ PrefabInstance:
       value: WindowFrame_Curved
       objectReference: {fileID: 0}
     - target: {fileID: 3120386922689967182, guid: eb69d7aecef9ff647a3bdc6a1eedac25, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3120386922689967182, guid: eb69d7aecef9ff647a3bdc6a1eedac25, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 3120386922689967182, guid: eb69d7aecef9ff647a3bdc6a1eedac25, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 3120386922689967182, guid: eb69d7aecef9ff647a3bdc6a1eedac25, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3120386922689967182, guid: eb69d7aecef9ff647a3bdc6a1eedac25, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3120386922689967182, guid: eb69d7aecef9ff647a3bdc6a1eedac25, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 3120386922689967182, guid: eb69d7aecef9ff647a3bdc6a1eedac25, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 3120386922689967182, guid: eb69d7aecef9ff647a3bdc6a1eedac25, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 3120386922689967182, guid: eb69d7aecef9ff647a3bdc6a1eedac25, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 3581938407224029365}
+    - target: {fileID: 3120386922689967182, guid: eb69d7aecef9ff647a3bdc6a1eedac25, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7225648997852100838, guid: eb69d7aecef9ff647a3bdc6a1eedac25, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7424,9 +7828,41 @@ PrefabInstance:
       value: WindowFrame_Penta
       objectReference: {fileID: 0}
     - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.b
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: coldColor.g
+      value: 0.75686276
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.b
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.g
+      value: 0.7647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: warmColor.r
+      value: 0.007843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 6224511912387818486}
+    - target: {fileID: 3991296491792384395, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6721749161835049590, guid: 4da61c1b370db4e4f9624d339e4a5f57, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -8628,33 +9064,45 @@ PrefabInstance:
       value: WindowFrame_Square
       objectReference: {fileID: 0}
     - target: {fileID: 8371188373841537086, guid: 18dc9777f00b7c14faea16a978686bdf, type: 3}
+      propertyPath: coldColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371188373841537086, guid: 18dc9777f00b7c14faea16a978686bdf, type: 3}
       propertyPath: coldColor.b
-      value: 0.8065683
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 8371188373841537086, guid: 18dc9777f00b7c14faea16a978686bdf, type: 3}
       propertyPath: coldColor.g
-      value: 0.9843137
+      value: 0.75686276
       objectReference: {fileID: 0}
     - target: {fileID: 8371188373841537086, guid: 18dc9777f00b7c14faea16a978686bdf, type: 3}
       propertyPath: coldColor.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371188373841537086, guid: 18dc9777f00b7c14faea16a978686bdf, type: 3}
+      propertyPath: warmColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8371188373841537086, guid: 18dc9777f00b7c14faea16a978686bdf, type: 3}
       propertyPath: warmColor.b
-      value: 0.3282508
+      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 8371188373841537086, guid: 18dc9777f00b7c14faea16a978686bdf, type: 3}
       propertyPath: warmColor.g
-      value: 0.9372549
+      value: 0.7647059
       objectReference: {fileID: 0}
     - target: {fileID: 8371188373841537086, guid: 18dc9777f00b7c14faea16a978686bdf, type: 3}
       propertyPath: warmColor.r
-      value: 0.27843142
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 8371188373841537086, guid: 18dc9777f00b7c14faea16a978686bdf, type: 3}
       propertyPath: frogInstance
       value: 
       objectReference: {fileID: 564091961096063567}
+    - target: {fileID: 8371188373841537086, guid: 18dc9777f00b7c14faea16a978686bdf, type: 3}
+      propertyPath: initialTemperature
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1431709625871924546, guid: 18dc9777f00b7c14faea16a978686bdf, type: 3}

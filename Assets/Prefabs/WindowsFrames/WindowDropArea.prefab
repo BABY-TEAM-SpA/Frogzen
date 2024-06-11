@@ -361,10 +361,10 @@ MonoBehaviour:
   frozenBarObject: {fileID: 272422744012667136}
   frozenBarFill: {fileID: 3321937957262526368}
   initialTemperature: 30
-  fillColor: {r: 0.9245283, g: 0.46662515, b: 0.52924436, a: 1}
-  warmColor: {r: 0.33490568, g: 1, b: 0.42019555, a: 1}
-  coldColor: {r: 0.5882353, g: 1, b: 0.7411765, a: 1}
-  frozenColor: {r: 0.6666667, g: 1, b: 0.9921569, a: 1}
+  fillColor: {r: 0.1764706, g: 0.92941177, b: 0.47843137, a: 0.67058825}
+  warmColor: {r: 0.007843138, g: 0.7647059, b: 0.6039216, a: 1}
+  coldColor: {r: 1, g: 0.75686276, b: 0.4627451, a: 1}
+  frozenColor: {r: 0.9372549, g: 0.2784314, b: 0.43529412, a: 1}
   currentFrog:
     type: 0
     frogSprites:
