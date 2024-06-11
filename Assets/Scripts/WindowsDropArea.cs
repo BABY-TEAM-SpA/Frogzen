@@ -21,7 +21,7 @@ public class WindowsDropArea : MonoBehaviour, IDropHandler
         if (eventData.pointerDrag != null && !hasWindow)
         {
             WindowsMovementController window = eventData.pointerDrag.GetComponent<WindowsMovementController>();
-            if (window.windowsType == windowFrameType)
+            if (window.windowsType == windowFrameType && window.hasDrag)
             {
                 window.PlaceWindow(this);
             }

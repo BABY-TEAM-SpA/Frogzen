@@ -14,7 +14,7 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
     private CanvasGroup canvasGroup;
 
     private bool canDrag;
-    private bool hasDrag;
+    public bool hasDrag;
     [SerializeField] private float holdTime = 3f;
     [SerializeField] private GameObject loadingParent;
     [SerializeField] private Image loadingBar;
@@ -102,7 +102,7 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (canDrag)
+        if (canDrag && hasDrag)
         {
             //canvasGroup.alpha = 1.0f;
             PlaceWindow(originalParent);
