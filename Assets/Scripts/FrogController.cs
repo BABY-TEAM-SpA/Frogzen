@@ -27,6 +27,7 @@ public class FrogController : MonoBehaviour
     [SerializeField] private CanvasGroup frozenBarObject;
     [SerializeField] private Image frozenBarFill;
     [SerializeField] private float initialTemperature = 40f;
+    [SerializeField] private Color fillColor;
     [SerializeField] private Color warmColor;
     [SerializeField] private Color coldColor;
     [SerializeField] private Color frozenColor;
@@ -58,58 +59,50 @@ public class FrogController : MonoBehaviour
         {
             if (windowFrame.hasWindow)
             {
-                if (temperature < initialTemperature)
+                frozenBarFill.color = fillColor;
+                if (temperature >= initialTemperature)
                 {
-                    //subir temperatura sin multiplicadores
-                    temperature += Time.deltaTime;// * currentFrog.coldnessFrogMultiplier *ClimateManager.Instance.currentWeather.frozenMultiply;
+                    frozenBarObject.gameObject.SetActive(false);
                 }
                 else
                 {
-                    // apagar la barra
+                    temperature += Time.deltaTime;
                 }
             }
             else
             {
-                //bajar temperatura con multiplicadores
                 temperature -= Time.deltaTime * currentFrog.coldnessFrogMultiplier * ClimateManager.Instance.currentWeather.frozenMultiply;
+                frozenBarObject.gameObject.SetActive(true);
+                if (temperature > 2*(initialTemperature / 3))
+                {
+                    frogInstance.sprite = currentFrog.frogSprites[0];
+                    frozenBarFill.color = warmColor;
+                }
+                else
+                {
+                    if (temperature > initialTemperature / 2)
+                    {
+                        frogInstance.sprite = currentFrog.frogSprites[1];
+                        frozenBarFill.color = coldColor;
+                    }
+                    else
+                    {
+                        if (temperature != 0)
+                        {
+                            frogInstance.sprite = currentFrog.frogSprites[2];
+                            frozenBarFill.color = frozenColor;
+                        }
+                        else
+                        {
+                            //Frozen.... frogInstance.sprite = currentFrog.frogSprites[3];
+                            frozenBarObject.gameObject.SetActive(false);
+                            isFrozen = true;
+                        }
+                    }
+                } 
             }
-            
             frozenBarFill.fillAmount = temperature / initialTemperature;
-            CheckTemperature();
         }
        
-    }
-    
-
-    void CheckTemperature()
-    {
-        if (temperature > initialTemperature / 2)
-        {
-            frogInstance.sprite = currentFrog.frogSprites[0];
-            frozenBarFill.color = warmColor;
-        }
-        else
-        {
-            if (temperature > initialTemperature / 4)
-            {
-                frogInstance.sprite = currentFrog.frogSprites[1];
-                frozenBarFill.color = coldColor;
-            }
-            else
-            {
-                if (temperature != 0)
-                {
-                    frogInstance.sprite = currentFrog.frogSprites[2];
-                    frozenBarFill.color = frozenColor;
-                }
-                else
-                {
-                    //Frozen.... frogInstance.sprite = currentFrog.frogSprites[3];
-                    frozenBarObject.gameObject.SetActive(false);
-                    isFrozen = true;
-                }
-            }
-            
-        }
     }
 }

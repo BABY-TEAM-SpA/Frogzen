@@ -91,12 +91,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windowsType: 0
   originalParent: {fileID: 0}
+  holdTime: 1
   loadingParent: {fileID: 8263156427601127270}
   loadingBar: {fileID: 1087654378436273756}
-  animCurve: 24
-  animUpTime: 0.26
-  scaleSizeBig: 1.396
-  animDownTime: 1.43
+  animCurve: 30
+  animUpTime: 0.8
+  scaleSizeBig: 1.29
+  animDownTime: 0.65
   upperObject: {fileID: 0}
 --- !u!1001 &5903877449047080007
 PrefabInstance:
@@ -192,6 +193,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3332182188539576667, guid: bf2183613f190fd44b38d59523d49003, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6842892698780981787, guid: bf2183613f190fd44b38d59523d49003, type: 3}
+      propertyPath: m_Color.b
+      value: 0.05965316
+      objectReference: {fileID: 0}
+    - target: {fileID: 6842892698780981787, guid: bf2183613f190fd44b38d59523d49003, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 6842892698780981787, guid: bf2183613f190fd44b38d59523d49003, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

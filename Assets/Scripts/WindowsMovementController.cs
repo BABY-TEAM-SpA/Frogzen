@@ -39,6 +39,11 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
         {
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
         }
+
+        if (transform.parent.TryGetComponent(out WindowsDropArea windowFrameParent))
+        {
+            originalParent = windowFrameParent;
+        }
         
     }
 
