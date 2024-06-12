@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public enum FrogType
 {
@@ -35,22 +36,19 @@ public class FrogController : MonoBehaviour
     private bool isFrozen;
     [SerializeField] private Frog currentFrog;
     private WindowsDropArea windowFrame;
-
-    private void Awake()
-    {
-        windowFrame = this.GetComponent<WindowsDropArea>();
-    }
+    
 
     public void Start()
     {
         temperature = initialTemperature;
     }
 
-    public void PrepareFrog()
+    public void PrepareFrog(Frog frogData, WindowsDropArea frame)
     {
-        
-        // currentFrog = seleccionar una rana random
+        windowFrame = frame;
+        currentFrog = frogData;
         frogInstance.sprite = currentFrog.frogSprites[0];
+        frogInstance.SetNativeSize();
     }
     
     void Update()
@@ -76,6 +74,7 @@ public class FrogController : MonoBehaviour
                 if (temperature > 2*(initialTemperature / 3))
                 {
                     frogInstance.sprite = currentFrog.frogSprites[0];
+                    frogInstance.SetNativeSize();
                     frozenBarFill.color = warmColor;
                 }
                 else
@@ -83,26 +82,30 @@ public class FrogController : MonoBehaviour
                     if (temperature > initialTemperature / 2)
                     {
                         frogInstance.sprite = currentFrog.frogSprites[1];
+                        frogInstance.SetNativeSize();
                         frozenBarFill.color = coldColor;
                     }
                     else
                     {
-                        if (temperature != 0)
+                        if (temperature > 0)
                         {
                             frogInstance.sprite = currentFrog.frogSprites[2];
+                            frogInstance.SetNativeSize();
                             frozenBarFill.color = frozenColor;
                         }
                         else
                         {
-                            //Frozen.... frogInstance.sprite = currentFrog.frogSprites[3];
+                            Debug.Log(this.gameObject.name+" has been Frozen");
+                            frogInstance.color = Color.cyan;//currentFrog.frogSprites[3];
+                            frogInstance.SetNativeSize();
                             frozenBarObject.gameObject.SetActive(false);
                             isFrozen = true;
                         }
                     }
                 } 
             }
-            frozenBarFill.fillAmount = temperature / initialTemperature;
+            frozenBarFill.fillAmount = temperature / initialTemperature;  
         }
-       
+
     }
 }

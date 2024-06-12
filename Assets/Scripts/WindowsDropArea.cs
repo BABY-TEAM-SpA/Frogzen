@@ -29,4 +29,17 @@ public class WindowsDropArea : MonoBehaviour, IDropHandler
         }
     }
 
+    public void SpawnWindow(WindowsMovementController prefab)
+    {
+        WindowsMovementController window = Instantiate<WindowsMovementController>(prefab,this.transform);
+        window.upperObject = GameManager.Instance.upperObject;
+        //window.PlaceWindow(this);
+    }
+
+    public void DestroyWindow()
+    {
+        WindowsMovementController window = transform.GetComponentInChildren<WindowsMovementController>();
+        window.DestroyWindow();
+    }
+
 }

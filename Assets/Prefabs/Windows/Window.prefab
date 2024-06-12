@@ -91,7 +91,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windowsType: 0
   originalParent: {fileID: 0}
-  holdTime: 1
+  hasDrag: 0
+  holdTime: 0.5
   loadingParent: {fileID: 8263156427601127270}
   loadingBar: {fileID: 1087654378436273756}
   animCurve: 30

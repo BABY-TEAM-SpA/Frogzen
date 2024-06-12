@@ -19,7 +19,7 @@ public class Climate
     public WeatherState weather;
     public float duration;
     public Color removingColorBar =Color.white;
-    [Range(1f,10f)] public float removingMultuplyDelay;
+    [Range(.5f,10f)] public float removingMultuplyDelay;
     [Range(1f,10f)] public float frozenMultiply;
 
 }
@@ -44,7 +44,6 @@ public class ClimateManager : MonoBehaviour
     }
 
 
-    
     private void Update()
     {
         

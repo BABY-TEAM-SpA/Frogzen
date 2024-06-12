@@ -25,7 +25,7 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
     [SerializeField] [Range(0f,5f)]private float animUpTime;
     [SerializeField] [Range(1f,2f)] private float scaleSizeBig;
     [SerializeField] [Range(0f,5f)]private float animDownTime;
-    [SerializeField] private Transform upperObject;
+    [SerializeField] public  Transform upperObject;
     private Vector2 animSize;
 
     private void Awake()
@@ -44,11 +44,12 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
         {
             originalParent = windowFrameParent;
         }
-        
+
     }
 
     private void Start()
     {
+        upperObject = GameManager.Instance.upperObject;
         PlaceWindow(originalParent);
     }
 
@@ -113,10 +114,17 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
     }
     public void PlaceWindow(WindowsDropArea parent)
     {
+        
         transform.SetParent(parent.transform);
         originalParent = parent;
         rectTransform.anchoredPosition = Vector2.zero;
         originalParent.hasWindow = true;
+    }
+
+    public void DestroyWindow()
+    {
+        originalParent.hasWindow = false;
+        this.gameObject.SetActive(false);
     }
 
     private IEnumerator HoldRoutine()
