@@ -31,6 +31,10 @@ public class ClimateManager : MonoBehaviour
     private int currentWeatherIndex;
     public Climate currentWeather;
 
+    public GameObject wind;
+    public GameObject rain;
+    public GameObject snow;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
@@ -22,6 +23,15 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private WindowsFrames[] windowsFramesData = new WindowsFrames[3];
     [SerializeField] private WindowsMovementController[] windowsPrefabs = new WindowsMovementController[3];
+
+    [Header("Menus Configuration")]
+    public bool isPaused;
+    public GameObject pauseMenu;
+    [SerializeField] private Slider musicVolumeSlider;
+    [SerializeField] private AudioSource musicPlayer;
+    [SerializeField] private Slider sfxVolumeSlider;
+    [SerializeField] private AudioSource sfxPlayer;
+    
 
     private void Awake()
     {
@@ -48,6 +58,14 @@ public class GameManager : MonoBehaviour
         DestroySomeWindow(2);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Pause))
+        {
+            Pause();
+        }
+    }
+
     void SetUpAllWindows()
     {
         foreach (WindowsFrames frame in windowsFramesData)
@@ -71,5 +89,52 @@ public class GameManager : MonoBehaviour
         winFrameData.windowsFrame[frameindex].DestroyWindow();
     }
     
+    public void Pause()
+    {
+        isPaused = true;
+        Time.timeScale = 0f; //no es lo que quiero hacer, pero por mientras.
+        musicVolumeSlider.value=musicPlayer.volume;
+        sfxVolumeSlider.value=sfxPlayer.volume;
+        sfxPlayer.Pause();
+        pauseMenu.SetActive(true);
+    }
+
+    public void UnPause()
+    {
+        isPaused = false;
+        Time.timeScale = 1f; //no es lo que quiero hacer, pero por mientras.
+        sfxPlayer.Play();
+        pauseMenu.SetActive(false);
+    }
+
+    public void UpdateMusicVolume()
+    {
+        musicPlayer.volume = musicVolumeSlider.value;
+        Debug.Log("volume: "+ musicVolumeSlider.value.ToString());
+    }
+
+    public void PlaySfx(AudioClip clip=null)
+    {
+        if (clip != null)
+        {
+            sfxPlayer.clip = clip;
+            sfxPlayer.loop = true;
+            sfxPlayer.Play(); 
+        }
+        else
+        {
+            sfxPlayer.Stop();
+        }
+    }
+    public void UpdateSFXVolume()
+    {
+        sfxPlayer.volume = sfxVolumeSlider.value;
+        Debug.Log("volume: "+ sfxVolumeSlider.value.ToString());
+    }
+
+    public void Exit()
+    {
+        Debug.Log("Has exited");
+    }
     
 }

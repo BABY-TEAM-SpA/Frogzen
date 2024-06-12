@@ -65,6 +65,7 @@ public class FrogController : MonoBehaviour
                 else
                 {
                     temperature += Time.deltaTime;
+                    frogInstance.sprite = currentFrog.frogSprites[0];
                 }
             }
             else
