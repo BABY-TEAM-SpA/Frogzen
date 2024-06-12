@@ -1907,7 +1907,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 0}
+  m_BackGroundColor: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 0.7019608}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3153,28 +3153,33 @@ MonoBehaviour:
     duration: 120
     removingColorBar: {r: 0.26099145, g: 0.6509434, b: 0.38063583, a: 1}
     removingMultuplyDelay: 1
-    frozenMultiply: 0
+    frozenMultiply: 1
+    sfx: {fileID: 0}
   - weather: 1
     duration: 180
     removingColorBar: {r: 0.33333334, g: 0.36862746, b: 0.33353177, a: 1}
     removingMultuplyDelay: 1.5
     frozenMultiply: 1
+    sfx: {fileID: 0}
   - weather: 2
     duration: 240
     removingColorBar: {r: 0.25490198, g: 0.40392157, b: 0.40244678, a: 1}
     removingMultuplyDelay: 0.5
     frozenMultiply: 1
+    sfx: {fileID: 8300000, guid: fad63b555f8aa724987adfa068a69f5a, type: 3}
   - weather: 3
     duration: 240
     removingColorBar: {r: 0.06274511, g: 0.8509804, b: 0.67282546, a: 1}
     removingMultuplyDelay: 2
     frozenMultiply: 1.45
+    sfx: {fileID: 8300000, guid: c2bd32a619d43104da2990937d058697, type: 3}
   currentWeather:
     weather: 4
     duration: 600
     removingColorBar: {r: 0.0627451, g: 0.85098046, b: 0.6745098, a: 1}
     removingMultuplyDelay: 1
     frozenMultiply: 1
+    sfx: {fileID: 0}
   wind: {fileID: 0}
   rain: {fileID: 1283356900}
   snow: {fileID: 1303995732}
