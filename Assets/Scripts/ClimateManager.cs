@@ -19,8 +19,8 @@ public class Climate
     public WeatherState weather;
     public float duration;
     public Color removingColorBar =Color.white;
-    [Range(.5f,10f)] public float removingMultuplyDelay;
-    [Range(1f,10f)] public float frozenMultiply;
+    [Range(.5f,3f)] public float removingMultuplyDelay;
+    [Range(1f,5f)] public float frozenMultiply;
     public AudioClip music;
     public AudioClip sfx;
     public int vfxIndex;

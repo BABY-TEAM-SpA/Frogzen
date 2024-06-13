@@ -125,6 +125,10 @@ public class GameManager : MonoBehaviour
             musicPlayer[1].clip = clip;
             if (mustFade)
             {
+                musicPlayer[1].volume = 0f;
+                musicPlayer[1].Play();
+                musicPlayer[1].time = musicPlayer[0].time;
+                musicPlayer[1].loop = true;
                 musicHandle = StartCoroutine(PlayingAudio(musicPlayer[1],fadeMusicTime, musicPlayer[0].volume));
             }
             else
@@ -138,6 +142,10 @@ public class GameManager : MonoBehaviour
             musicPlayer[0].clip = clip;
             if (mustFade)
             {
+                musicPlayer[0].volume = 0f;
+                musicPlayer[0].Play();
+                musicPlayer[0].time = musicPlayer[1].time;
+                musicPlayer[0].loop = true;
                 musicHandle = StartCoroutine(PlayingAudio( musicPlayer[0],fadeMusicTime, musicPlayer[1].volume));
             }
             else
@@ -204,9 +212,6 @@ public class GameManager : MonoBehaviour
     private IEnumerator PlayingAudio( AudioSource AToPlay,float time, float currentVolume)
     {
         float elapsedTime = 0f;
-        AToPlay.volume = 0f;
-        AToPlay.Play();
-        AToPlay.loop = true;
         while (elapsedTime < time)
         {
             elapsedTime += Time.deltaTime;

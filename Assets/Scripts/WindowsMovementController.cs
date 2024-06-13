@@ -137,7 +137,7 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
         while (elapsedTime < hold)
         {
             elapsedTime += Time.deltaTime;
-            loadingBar.fillAmount = elapsedTime / holdTime;
+            loadingBar.fillAmount = elapsedTime / hold;
             yield return null;
         }
         transform.SetParent(upperObject);
