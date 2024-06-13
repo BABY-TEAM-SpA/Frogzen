@@ -132,7 +132,7 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
         loadingBar.fillAmount = 0f;
         loadingBar.color = ClimateManager.Instance.currentWeather.removingColorBar;
         loadingParent.gameObject.SetActive(true);
-        float hold = holdTime; //* ClimateManager.Instance.currentWeather.removingMultuplyDelay;
+        float hold = holdTime * ClimateManager.Instance.currentWeather.removingMultuplyDelay;
         float elapsedTime = 0f;
         while (elapsedTime < hold)
         {
