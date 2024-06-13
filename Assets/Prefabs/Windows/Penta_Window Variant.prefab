@@ -107,7 +107,7 @@ PrefabInstance:
     - target: {fileID: 6789628304274037103, guid: 73e9288e9fb821f4d9e003cbfdbebc46, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 08fa677d7c5d9c04c89f213d2f1a2fba, type: 3}
+      objectReference: {fileID: 21300000, guid: a2301d4820903ad439bc596e1803938c, type: 3}
     - target: {fileID: 7073272379879725617, guid: 73e9288e9fb821f4d9e003cbfdbebc46, type: 3}
       propertyPath: m_Name
       value: Penta_Window Variant

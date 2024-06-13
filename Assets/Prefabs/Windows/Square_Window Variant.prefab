@@ -99,7 +99,7 @@ PrefabInstance:
     - target: {fileID: 6789628304274037103, guid: 73e9288e9fb821f4d9e003cbfdbebc46, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7ce308e0c23764349abeb2dfb04ecb17, type: 3}
+      objectReference: {fileID: 21300000, guid: 5af16c4ba103e3e4e98cfda057e620a2, type: 3}
     - target: {fileID: 7073272379879725617, guid: 73e9288e9fb821f4d9e003cbfdbebc46, type: 3}
       propertyPath: m_Name
       value: Square_Window Variant
