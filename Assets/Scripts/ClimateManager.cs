@@ -21,19 +21,23 @@ public class Climate
     public Color removingColorBar =Color.white;
     [Range(.5f,10f)] public float removingMultuplyDelay;
     [Range(1f,10f)] public float frozenMultiply;
+    public AudioClip music;
     public AudioClip sfx;
+    public int vfxIndex;
 }
 
 public class ClimateManager : MonoBehaviour
 {
     public static ClimateManager Instance { get; private set; }
     [SerializeField] private Climate[] climates;
-    private int currentWeatherIndex;
-    public Climate currentWeather;
+    [SerializeField] private List<int> mustBreakWindowSeason =new List<int>();
+    [SerializeField] private int currentWeatherIndex=-1;
+    [SerializeField] private int currentWeatherCounter=-1;
+    public Climate currentWeather = null;
+    private float currentWeatherTimer=0;
 
-    public GameObject wind;
-    public GameObject rain;
-    public GameObject snow;
+    public List<GameObject> vfx;
+    
 
     private void Awake()
     {
@@ -47,16 +51,49 @@ public class ClimateManager : MonoBehaviour
         }
     }
 
-
     private void Update()
     {
-        
+        if (currentWeatherTimer <= currentWeather.duration)
+        {
+            currentWeatherTimer += Time.deltaTime;
+        }
+        else
+        {
+            ChangeWeather();
+        }
     }
 
 
     
-    private void ChangeWeather()
+    public void ChangeWeather(bool mustFade =true)
     {
+        UpdateWeatherIndex();
+        currentWeather = climates[currentWeatherIndex];
+        currentWeatherTimer = 0;
+        GameManager.Instance.StopMusic();
+        GameManager.Instance.PlayMusic(currentWeather.music, mustFade);
+        GameManager.Instance.StopSFX();
+        GameManager.Instance.PlaySFX(currentWeather.sfx);
+        ChangeVFX();
+    }
+
+    private void UpdateWeatherIndex()
+    {
+        currentWeatherIndex += 1;
+        currentWeatherCounter += 1;
+        if (currentWeatherIndex >= climates.Length)
+        {
+            currentWeatherIndex = 0;
+        }
+    }
+
+    private void ChangeVFX()
+    {
+        foreach (GameObject fx in vfx)
+        {
+            fx?.SetActive(false);
+        }
         
+        vfx[currentWeather.vfxIndex]?.SetActive(true);
     }
 }

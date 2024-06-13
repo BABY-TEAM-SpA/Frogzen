@@ -9,7 +9,6 @@ using Random = UnityEngine.Random;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    private ClimateManager climateManager;
     [SerializeField] public Frog[] frogsData;
     
     [Serializable]
@@ -27,10 +26,17 @@ public class GameManager : MonoBehaviour
     [Header("Menus Configuration")]
     public bool isPaused;
     public GameObject pauseMenu;
+
+    [Header("Audio configurations")] 
+    private Coroutine musicHandle;
+    private Coroutine sfxHandle;
+    [SerializeField] private float fadeMusicTime;
     [SerializeField] private Slider musicVolumeSlider;
-    [SerializeField] private AudioSource musicPlayer;
+    [SerializeField] private AudioSource[] musicPlayer;
+    [SerializeField] private int currentMusicPlayer=0;
     [SerializeField] private Slider sfxVolumeSlider;
-    [SerializeField] private AudioSource sfxPlayer;
+    [SerializeField] private AudioSource[] sfxPlayer;
+    [SerializeField] private int currentSfxPlayer=0;
     
 
     private void Awake()
@@ -43,11 +49,6 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        
-        if(TryGetComponent(out ClimateManager manage))
-        {
-            climateManager = manage;
-        }
 
     }
     void Start()
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
         DestroySomeWindow(0);
         DestroySomeWindow(1);
         DestroySomeWindow(2);
+        ClimateManager.Instance.ChangeWeather(false);
     }
 
     private void Update()
@@ -93,9 +95,9 @@ public class GameManager : MonoBehaviour
     {
         isPaused = true;
         Time.timeScale = 0f; //no es lo que quiero hacer, pero por mientras.
-        musicVolumeSlider.value=musicPlayer.volume;
-        sfxVolumeSlider.value=sfxPlayer.volume;
-        sfxPlayer.Pause();
+        musicVolumeSlider.value=musicPlayer[0].volume;
+        sfxVolumeSlider.value=sfxPlayer[0].volume;
+        sfxPlayer[currentSfxPlayer].Pause();
         pauseMenu.SetActive(true);
     }
 
@@ -103,38 +105,130 @@ public class GameManager : MonoBehaviour
     {
         isPaused = false;
         Time.timeScale = 1f; //no es lo que quiero hacer, pero por mientras.
-        sfxPlayer.Play();
+        sfxPlayer[currentSfxPlayer].Play();
         pauseMenu.SetActive(false);
     }
 
     public void UpdateMusicVolume()
     {
-        musicPlayer.volume = musicVolumeSlider.value;
+        foreach (AudioSource player in musicPlayer)
+        {
+            player.volume = musicVolumeSlider.value;
+        }
         Debug.Log("volume: "+ musicVolumeSlider.value.ToString());
     }
 
-    public void PlaySfx(AudioClip clip=null)
+    public void PlayMusic(AudioClip clip, bool mustFade =true)
     {
-        if (clip != null)
+        if (currentMusicPlayer == 0)
         {
-            sfxPlayer.clip = clip;
-            sfxPlayer.loop = true;
-            sfxPlayer.Play(); 
+            musicPlayer[1].clip = clip;
+            if (mustFade)
+            {
+                musicHandle = StartCoroutine(PlayingAudio(musicPlayer[1],fadeMusicTime, musicPlayer[0].volume));
+            }
+            else
+            {
+                musicPlayer[1].Play();
+            }
+            currentMusicPlayer = 1;
         }
         else
         {
-            sfxPlayer.Stop();
+            musicPlayer[0].clip = clip;
+            if (mustFade)
+            {
+                musicHandle = StartCoroutine(PlayingAudio( musicPlayer[0],fadeMusicTime, musicPlayer[1].volume));
+            }
+            else
+            {
+                musicPlayer[0].Play();
+            }
+            currentMusicPlayer = 0;
+        }
+    }
+
+    public void StopMusic(bool mustFade =true)
+    {
+        if (mustFade)
+        {
+            musicHandle = StartCoroutine(StopingAudio(musicPlayer[currentMusicPlayer],fadeMusicTime/2, musicPlayer[currentMusicPlayer].volume));
+        }
+        else
+        {
+            musicPlayer[currentMusicPlayer].Stop();
+        }
+    }
+    public void PlaySFX(AudioClip clip=null)
+    {
+        if (currentSfxPlayer == 0)
+        {
+            sfxPlayer[1].volume = 0;
+            sfxPlayer[1].clip = clip;
+            sfxHandle = StartCoroutine(PlayingAudio( sfxPlayer[1],fadeMusicTime, sfxPlayer[0].volume));
+            currentSfxPlayer = 1;
+        }
+        else
+        {
+            sfxPlayer[0].volume = 0;
+            sfxPlayer[0].clip = clip;
+            sfxHandle = StartCoroutine(PlayingAudio(sfxPlayer[0], fadeMusicTime, sfxPlayer[1].volume));
+            currentSfxPlayer = 0;
+        }
+    }
+    
+    public void StopSFX(bool mustFade =true)
+    {
+        if (mustFade)
+        {
+            sfxHandle = StartCoroutine(StopingAudio(sfxPlayer[currentSfxPlayer],fadeMusicTime/2, sfxPlayer[currentSfxPlayer].volume));
+        }
+        else
+        {
+            sfxPlayer[currentSfxPlayer].Stop();
         }
     }
     public void UpdateSFXVolume()
     {
-        sfxPlayer.volume = sfxVolumeSlider.value;
-        Debug.Log("volume: "+ sfxVolumeSlider.value.ToString());
+        foreach (AudioSource player in sfxPlayer)
+        {
+            player.volume = sfxVolumeSlider.value;
+        }
     }
 
     public void Exit()
     {
         Debug.Log("Has exited");
     }
-    
+
+    private IEnumerator PlayingAudio( AudioSource AToPlay,float time, float currentVolume)
+    {
+        float elapsedTime = 0f;
+        AToPlay.volume = 0f;
+        AToPlay.Play();
+        AToPlay.loop = true;
+        while (elapsedTime < time)
+        {
+            elapsedTime += Time.deltaTime;
+            float progress = elapsedTime / time;
+            AToPlay.volume = Mathf.Lerp(0f, currentVolume, progress);
+            yield return null;
+        }
+        AToPlay.volume = currentVolume;
+        
+    }
+    private IEnumerator StopingAudio(AudioSource APlaying,float time, float currentVolume)
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < time)
+        {
+            elapsedTime += Time.deltaTime;
+            float progress = elapsedTime / time;
+            APlaying.volume = Mathf.Lerp(currentVolume, 0f, progress);
+            yield return null;
+        }
+        APlaying.Stop();
+        APlaying.volume = currentVolume;
+        
+    }
 }
