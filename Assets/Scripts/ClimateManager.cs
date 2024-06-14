@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public enum WeatherState{
@@ -23,6 +24,7 @@ public class Climate
     [Range(1f,5f)] public float frozenMultiply;
     public AudioClip sfx;
     public int vfxIndex;
+    public int angle;
 }
 
 public class ClimateManager : MonoBehaviour
@@ -36,6 +38,11 @@ public class ClimateManager : MonoBehaviour
     private float currentWeatherTimer=0;
 
     public List<GameObject> vfx;
+
+    [SerializeField] private Sprite[] ruedaSprites;
+    [SerializeField] private Image rueda;
+    [SerializeField] private Image flecha;
+    
     
 
     private void Awake()
@@ -73,6 +80,11 @@ public class ClimateManager : MonoBehaviour
         GameManager.Instance.StopSFX();
         GameManager.Instance.PlaySFX(currentWeather.sfx);
         ChangeVFX();
+        if(mustBreakWindowSeason.Contains(currentWeatherCounter))
+        {
+            GameManager.Instance.DestroySomeWindow();
+        }
+        UpdateUI();
     }
 
     private void UpdateWeatherIndex()
@@ -93,5 +105,12 @@ public class ClimateManager : MonoBehaviour
         }
         
         vfx[currentWeather.vfxIndex]?.SetActive(true);
+    }
+
+    private void UpdateUI()
+    {
+        rueda.sprite = ruedaSprites[currentWeatherIndex];
+        LeanTween.rotateZ(flecha.gameObject, currentWeather.angle, currentWeather.duration);
+
     }
 }

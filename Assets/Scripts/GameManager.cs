@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
     private float currentMusicVolume = 1f;  
     [SerializeField] private Slider musicVolumeSlider;
     [SerializeField] private AudioPlayers[] musicPlayers;
-    [SerializeField] private int currentMusicPlayer=0;
     private float currentSFXVolume = 1f;  
     [SerializeField] private Slider sfxVolumeSlider;
     [SerializeField] private AudioSource[] sfxPlayer;
@@ -97,7 +96,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void DestroySomeWindow(int frameDataindex = -1)
+    public void DestroySomeWindow(int frameDataindex = -1)
     {
         if(frameDataindex ==-1) frameDataindex = Random.Range(0, windowsFramesData.Length);
         WindowsFrames winFrameData = windowsFramesData[frameDataindex];
