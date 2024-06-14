@@ -21,7 +21,6 @@ public class Climate
     public Color removingColorBar =Color.white;
     [Range(.5f,3f)] public float removingMultuplyDelay;
     [Range(1f,5f)] public float frozenMultiply;
-    public AudioClip music;
     public AudioClip sfx;
     public int vfxIndex;
 }
@@ -31,7 +30,7 @@ public class ClimateManager : MonoBehaviour
     public static ClimateManager Instance { get; private set; }
     [SerializeField] private Climate[] climates;
     [SerializeField] private List<int> mustBreakWindowSeason =new List<int>();
-    [SerializeField] private int currentWeatherIndex=-1;
+    [SerializeField] public int currentWeatherIndex=-1;
     [SerializeField] private int currentWeatherCounter=-1;
     public Climate currentWeather = null;
     private float currentWeatherTimer=0;
@@ -70,8 +69,7 @@ public class ClimateManager : MonoBehaviour
         UpdateWeatherIndex();
         currentWeather = climates[currentWeatherIndex];
         currentWeatherTimer = 0;
-        GameManager.Instance.StopMusic();
-        GameManager.Instance.PlayMusic(currentWeather.music, mustFade);
+        GameManager.Instance.PlayMusic(mustFade);
         GameManager.Instance.StopSFX();
         GameManager.Instance.PlaySFX(currentWeather.sfx);
         ChangeVFX();
