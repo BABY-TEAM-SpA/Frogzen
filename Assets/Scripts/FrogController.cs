@@ -57,7 +57,7 @@ public class FrogController : MonoBehaviour
         {
             if (windowFrame.hasWindow)
             {
-                frozenBarFill.color = fillColor;
+                
                 if (temperature >= initialTemperature)
                 {
                     frozenBarObject.gameObject.SetActive(false);
@@ -65,7 +65,7 @@ public class FrogController : MonoBehaviour
                 else
                 {
                     temperature += Time.deltaTime;
-                    frogInstance.sprite = currentFrog.frogSprites[0];
+                    UpdateSprite(0, fillColor);
                 }
             }
             else
@@ -74,33 +74,23 @@ public class FrogController : MonoBehaviour
                 frozenBarObject.gameObject.SetActive(true);
                 if (temperature > 2*(initialTemperature / 3))
                 {
-                    frogInstance.sprite = currentFrog.frogSprites[0];
-                    frogInstance.SetNativeSize();
-                    frozenBarFill.color = warmColor;
+                    UpdateSprite(0,warmColor);
                 }
                 else
                 {
                     if (temperature > initialTemperature / 2)
                     {
-                        frogInstance.sprite = currentFrog.frogSprites[1];
-                        frogInstance.SetNativeSize();
-                        frozenBarFill.color = coldColor;
+                        UpdateSprite(1,coldColor);
                     }
                     else
                     {
                         if (temperature > 0)
                         {
-                            frogInstance.sprite = currentFrog.frogSprites[2];
-                            frogInstance.SetNativeSize();
-                            frozenBarFill.color = frozenColor;
+                            UpdateSprite(2,frozenColor);
                         }
                         else
                         {
-                            Debug.Log(this.gameObject.name+" has been Frozen");
-                            frogInstance.color = Color.cyan;//currentFrog.frogSprites[3];
-                            frogInstance.SetNativeSize();
-                            frozenBarObject.gameObject.SetActive(false);
-                            isFrozen = true;
+                            Freeze();
                         }
                     }
                 } 
@@ -108,5 +98,20 @@ public class FrogController : MonoBehaviour
             frozenBarFill.fillAmount = temperature / initialTemperature;  
         }
 
+    }
+
+    public void UpdateSprite(int index, Color color)
+    {
+        frogInstance.sprite = currentFrog.frogSprites[index];
+        frogInstance.SetNativeSize();
+        frozenBarFill.color = color;
+    }
+    public void Freeze()
+    {
+        frogInstance.color = Color.cyan;//currentFrog.frogSprites[3];
+        frogInstance.SetNativeSize();
+        frozenBarObject.gameObject.SetActive(false);
+        isFrozen = true;
+        GameManager.Instance.CheckTotalFrogs();
     }
 }

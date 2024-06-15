@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -42,6 +43,7 @@ public class ClimateManager : MonoBehaviour
     [SerializeField] private Sprite[] ruedaSprites;
     [SerializeField] private Image rueda;
     [SerializeField] private Image flecha;
+    [SerializeField] private TMP_Text timeText;
     
     
 
@@ -59,6 +61,7 @@ public class ClimateManager : MonoBehaviour
 
     private void Update()
     {
+        timeText.text = GameManager.Instance.GetGameTime();
         if (currentWeatherTimer <= currentWeather.duration)
         {
             currentWeatherTimer += Time.deltaTime;
@@ -71,14 +74,18 @@ public class ClimateManager : MonoBehaviour
 
 
     
-    public void ChangeWeather(bool mustFade =true)
+    public void ChangeWeather(bool isInitial=false)
     {
+        if (!isInitial)
+        {
+            GameManager.Instance.StopSFX(currentWeatherIndex);
+        }
+        
         UpdateWeatherIndex();
         currentWeather = climates[currentWeatherIndex];
         currentWeatherTimer = 0;
-        GameManager.Instance.PlayMusic(mustFade);
-        GameManager.Instance.StopSFX();
-        GameManager.Instance.PlaySFX(currentWeather.sfx);
+        GameManager.Instance.PlayMusic();
+        GameManager.Instance.PlaySFX(currentWeather.sfx,currentWeatherIndex,true);
         ChangeVFX();
         if(mustBreakWindowSeason.Contains(currentWeatherCounter))
         {

@@ -28,6 +28,10 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
     [SerializeField] public  Transform upperObject;
     private Vector2 animSize;
 
+    [SerializeField] private AudioClip popUP;
+    [SerializeField] private AudioClip popDown;
+    
+
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -149,6 +153,7 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
 
     private void AnimateUP()
     {
+        GameManager.Instance.PlaySFX(popUP);
         canvasGroup.blocksRaycasts = false;
         LeanTween.pause(this.gameObject);
         LeanTween.size(rectTransform, animSize*scaleSizeBig, animUpTime).setEase(animCurve);
@@ -156,6 +161,7 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
 
     private void AnimateDown()
     {
+        GameManager.Instance.PlaySFX(popDown);
         canvasGroup.blocksRaycasts = true;
         LeanTween.pause(this.gameObject);
         LeanTween.size(rectTransform, animSize, animDownTime).setEase(animCurve);

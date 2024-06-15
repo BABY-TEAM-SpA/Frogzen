@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,6 +15,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     [SerializeField] public Frog[] frogsData;
+    [SerializeField] private float gameTime;
+    [SerializeField] private int frogsDead;
+    [SerializeField] private int windowsBroken;
+    
     
     [Serializable]                                        
     internal class AudioPlayers                           
@@ -37,6 +42,9 @@ public class GameManager : MonoBehaviour
     [Header("Menus Configuration")]
     public bool isPaused;
     public GameObject pauseMenu;
+    public GameObject endMenu;
+    public TMP_Text windowsEndText;
+    public TMP_Text timeEndText;
 
     [Header("Audio configurations")] 
     
@@ -48,7 +56,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioPlayers[] musicPlayers;
     private float currentSFXVolume = 1f;  
     [SerializeField] private Slider sfxVolumeSlider;
-    [SerializeField] private AudioSource[] sfxPlayer;
+    [SerializeField] private AudioPlayers[] sfxPlayer;
     [SerializeField] private int currentSfxPlayer=0;
     
 
@@ -70,11 +78,12 @@ public class GameManager : MonoBehaviour
         DestroySomeWindow(0);
         DestroySomeWindow(1);
         DestroySomeWindow(2);
-        ClimateManager.Instance.ChangeWeather(false);
+        ClimateManager.Instance.ChangeWeather(true);
     }
 
     private void Update()
     {
+        gameTime += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
             Pause();
@@ -102,6 +111,7 @@ public class GameManager : MonoBehaviour
         WindowsFrames winFrameData = windowsFramesData[frameDataindex];
         int frameindex = Random.Range(0, winFrameData.windowsFrame.Length);
         winFrameData.windowsFrame[frameindex].DestroyWindow();
+        windowsBroken += 1;
     }
     
 
@@ -120,18 +130,19 @@ public class GameManager : MonoBehaviour
     
     public void UpdateSFXVolume()                        
     {                                                    
-        foreach (AudioSource player in sfxPlayer)        
+        foreach (AudioPlayers player in sfxPlayer)        
         {                                                
-            player.volume = sfxVolumeSlider.value;       
+            player.audioSource.volume = sfxVolumeSlider.value;       
             currentSFXVolume =  sfxVolumeSlider.value;   
         }                                                
     }                                                    
 
     
-    public void PlayMusic(bool mustFade =true)
+    public void PlayMusic()
     {
-        for (int i = 0; i < musicPlayers.Length; i++)
+        for (int i = 1; i < musicPlayers.Length; i++)
         {
+            musicPlayers[i].audioSource.time = musicPlayers[0].audioSource.time;
             if (i <= ClimateManager.Instance.currentWeatherIndex)
             {
                 if (!musicPlayers[i].isActive)
@@ -151,26 +162,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void PlaySFX(AudioClip clip=null)
+    public void PlaySFX(AudioClip clip,int index=4, bool mustFade=false)
     {
-        if (currentSfxPlayer == 0)
-        {   
-            currentSfxPlayer = 1;
+        if (mustFade)
+        {
+            sfxPlayer[index].audioSource.volume = 0;                                                                      
+            sfxPlayer[index].audioSource.clip = clip;                                                                     
+            sfxPlayer[index].audioSource.Play();                                                                          
+            sfxHandle = StartCoroutine(ChangeVolume(sfxPlayer[index].audioSource, fadeMusicTime, 0f,currentSFXVolume));  
         }
         else
-        {   
-            currentSfxPlayer = 0;                                                             
+        {
+            sfxPlayer[index].audioSource.volume = currentSFXVolume;                                                                      
+            sfxPlayer[index].audioSource.clip = clip;                                                                     
+            sfxPlayer[index].audioSource.Play();
         }
-        sfxPlayer[currentSfxPlayer].volume = 0;                                                                      
-        sfxPlayer[currentSfxPlayer].clip = clip;                                                                     
-        sfxPlayer[currentSfxPlayer].Play();                                                                          
-        sfxHandle = StartCoroutine(ChangeVolume(sfxPlayer[currentSfxPlayer], fadeMusicTime, 0f,currentSFXVolume));   
     }
     
-    public void StopSFX(bool mustFade =true)
+    public void StopSFX(int index)
     {
-        int actualindex = currentSfxPlayer;
-        sfxHandle = StartCoroutine(ChangeVolume(sfxPlayer[actualindex],fadeMusicTime/2,currentSFXVolume, 0f, () => sfxPlayer[actualindex].Stop() ));
+        
+        sfxHandle = StartCoroutine(ChangeVolume(sfxPlayer[index].audioSource,fadeMusicTime/2,currentSFXVolume, 0f, () =>
+        {
+            sfxPlayer[index]?.audioSource.Stop();
+        }));
     }
     
     private IEnumerator ChangeVolume( AudioSource AToPlay,float time, float start, float end, Action onComplete=null)                 
@@ -196,7 +211,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f; //no es lo que quiero hacer, pero por mientras.                 
         musicVolumeSlider.value=currentMusicVolume;                                          
         sfxVolumeSlider.value=currentSFXVolume;                                              
-        sfxPlayer[currentSfxPlayer].Pause();                                                 
+        sfxPlayer[currentSfxPlayer].audioSource.Pause();                                                 
         pauseMenu.SetActive(true);                                                           
     }                                                                                        
                                                                                           
@@ -204,11 +219,46 @@ public class GameManager : MonoBehaviour
     {                                                                                        
         isPaused = false;                                                                    
         Time.timeScale = 1f; //no es lo que quiero hacer, pero por mientras.                 
-        sfxPlayer[currentSfxPlayer].Play();                                                  
+        sfxPlayer[currentSfxPlayer].audioSource.Play();                                                  
         pauseMenu.SetActive(false);                                                          
     }                                                                                        
     public void Exit()
     {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public string GetGameTime()
+    {
+        int minutes = Mathf.FloorToInt(gameTime / 60);
+        int seconds = Mathf.FloorToInt(gameTime % 60);
+
+        // Formatea el resultado en mm:ss
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void CheckTotalFrogs()
+    {
+        frogsDead += 1;
+        if (frogsDead == windowsBroken)
+        {
+            Time.timeScale = 0f;
+            endMenu.SetActive(true);
+            windowsEndText.text = windowsBroken.ToString();
+            timeEndText.text = GetGameTime();
+            foreach (AudioPlayers player in musicPlayers)
+            {
+                player.audioSource.Stop();
+            }
+            foreach (AudioPlayers player in sfxPlayer)
+            {
+                player.audioSource.Stop();
+            }
+        }
+    }
+
+    public void OnEndingGame()
+    {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 }
