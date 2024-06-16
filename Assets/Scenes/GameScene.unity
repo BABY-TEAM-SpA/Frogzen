@@ -4878,7 +4878,7 @@ MonoBehaviour:
     sfx: {fileID: 8300000, guid: c2bd32a619d43104da2990937d058697, type: 3}
     vfxIndex: 3
     angle: 0
-  mustBreakWindowSeason: 010000000200000003000000050000000600000007000000
+  mustBreakWindowSeason: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d000000
   currentWeatherIndex: -1
   currentWeatherCounter: -1
   currentWeather:
