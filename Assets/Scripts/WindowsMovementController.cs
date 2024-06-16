@@ -30,6 +30,7 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
 
     [SerializeField] private AudioClip popUP;
     [SerializeField] private AudioClip popDown;
+    [SerializeField] private AudioClip breaAudioClip;
     
 
     private void Awake()
@@ -125,11 +126,7 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
         originalParent.hasWindow = true;
     }
 
-    public void DestroyWindow()
-    {
-        originalParent.hasWindow = false;
-        this.gameObject.SetActive(false);
-    }
+    
 
     private IEnumerator HoldRoutine()
     {
@@ -153,7 +150,7 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
 
     private void AnimateUP()
     {
-        GameManager.Instance.PlaySFX(popUP);
+        GameManager.Instance.PlaySFX(popUP,5);
         canvasGroup.blocksRaycasts = false;
         LeanTween.pause(this.gameObject);
         LeanTween.size(rectTransform, animSize*scaleSizeBig, animUpTime).setEase(animCurve);
@@ -161,10 +158,16 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
 
     private void AnimateDown()
     {
-        GameManager.Instance.PlaySFX(popDown);
+        GameManager.Instance.PlaySFX(popDown,5);
         canvasGroup.blocksRaycasts = true;
         LeanTween.pause(this.gameObject);
         LeanTween.size(rectTransform, animSize, animDownTime).setEase(animCurve);
+    }
+    
+    public void DestroyWindow()
+    {
+        this.gameObject.SetActive(false);
+        GameManager.Instance.PlaySFX(breaAudioClip,5);
     }
     
 }

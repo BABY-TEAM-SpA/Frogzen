@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -14,6 +15,7 @@ using Random = UnityEngine.Random;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    [SerializeField] private bool adminMode;
     [SerializeField] public Frog[] frogsData;
     [SerializeField] private float gameTime;
     [SerializeField] private int frogsDead;
@@ -105,13 +107,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void DestroySomeWindow(int frameDataindex = -1)
+    public void DestroySomeWindow(int frameDataindex = -1, int hasRepeat = 0)
     {
-        if(frameDataindex ==-1) frameDataindex = Random.Range(0, windowsFramesData.Length);
+        if (frameDataindex == -1)
+        {
+            frameDataindex = Random.Range(0, windowsFramesData.Length);
+        }
         WindowsFrames winFrameData = windowsFramesData[frameDataindex];
         int frameindex = Random.Range(0, winFrameData.windowsFrame.Length);
-        winFrameData.windowsFrame[frameindex].DestroyWindow();
-        windowsBroken += 1;
+        if (winFrameData.windowsFrame[frameindex].DestroyWindow())
+        {
+            windowsBroken += 1;
+        }
+        else
+        {
+            hasRepeat += 1;
+            Debug.Log("repeat on trying destroying");
+            DestroySomeWindow(frameDataindex,hasRepeat);
+        }
     }
     
 
@@ -239,7 +252,7 @@ public class GameManager : MonoBehaviour
     public void CheckTotalFrogs()
     {
         frogsDead += 1;
-        if (frogsDead == windowsBroken)
+        if (frogsDead == windowsBroken && !adminMode)
         {
             Time.timeScale = 0f;
             endMenu.SetActive(true);

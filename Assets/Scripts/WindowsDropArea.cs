@@ -33,13 +33,20 @@ public class WindowsDropArea : MonoBehaviour, IDropHandler
     {
         WindowsMovementController window = Instantiate<WindowsMovementController>(prefab,this.transform);
         window.upperObject = GameManager.Instance.upperObject;
-        //window.PlaceWindow(this);
+        hasWindow = true;
     }
 
-    public void DestroyWindow()
+    public bool DestroyWindow()
     {
-        WindowsMovementController window = transform.GetComponentInChildren<WindowsMovementController>();
-        window.DestroyWindow();
+        if (hasWindow)
+        {
+            WindowsMovementController window = transform.GetComponentInChildren<WindowsMovementController>();
+            window.DestroyWindow();
+            hasWindow = false;
+            return true;
+        }
+        return false;
+
     }
 
 }

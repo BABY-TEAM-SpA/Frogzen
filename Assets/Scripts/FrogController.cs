@@ -36,6 +36,7 @@ public class FrogController : MonoBehaviour
     private bool isFrozen;
     [SerializeField] private Frog currentFrog;
     private WindowsDropArea windowFrame;
+    [SerializeField] private AudioClip freezeSound;
     
 
     public void Start()
@@ -112,6 +113,7 @@ public class FrogController : MonoBehaviour
         frogInstance.SetNativeSize();
         frozenBarObject.gameObject.SetActive(false);
         isFrozen = true;
+        GameManager.Instance.PlaySFX(freezeSound,6);
         GameManager.Instance.CheckTotalFrogs();
     }
 }

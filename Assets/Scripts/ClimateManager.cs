@@ -21,6 +21,7 @@ public class Climate
     public WeatherState weather;
     public float duration;
     public Color removingColorBar =Color.white;
+    public Sprite ruedaSprite;
     [Range(.5f,3f)] public float removingMultuplyDelay;
     [Range(1f,5f)] public float frozenMultiply;
     public AudioClip sfx;
@@ -39,8 +40,7 @@ public class ClimateManager : MonoBehaviour
     private float currentWeatherTimer=0;
 
     public List<GameObject> vfx;
-
-    [SerializeField] private Sprite[] ruedaSprites;
+    
     [SerializeField] private Image rueda;
     [SerializeField] private Image flecha;
     [SerializeField] private TMP_Text timeText;
@@ -89,7 +89,7 @@ public class ClimateManager : MonoBehaviour
         ChangeVFX();
         if(mustBreakWindowSeason.Contains(currentWeatherCounter))
         {
-            GameManager.Instance.DestroySomeWindow();
+            GameManager.Instance.DestroySomeWindow(-1);
         }
         UpdateUI();
     }
@@ -116,7 +116,7 @@ public class ClimateManager : MonoBehaviour
 
     private void UpdateUI()
     {
-        rueda.sprite = ruedaSprites[currentWeatherIndex];
+        rueda.sprite = currentWeather.ruedaSprite;
         LeanTween.rotateZ(flecha.gameObject, currentWeather.angle, currentWeather.duration);
 
     }

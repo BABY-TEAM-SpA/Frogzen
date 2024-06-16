@@ -372,3 +372,4 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     coldnessFrogMultiplier: 0
+  freezeSound: {fileID: 8300000, guid: 8c58ee8a6bfd6a748af8da419119f2be, type: 3}

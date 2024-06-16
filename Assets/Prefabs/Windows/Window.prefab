@@ -103,6 +103,7 @@ MonoBehaviour:
   upperObject: {fileID: 0}
   popUP: {fileID: 8300000, guid: 52aa8fb1091c7b84daf55db165eec74f, type: 3}
   popDown: {fileID: 8300000, guid: eef871a4a3e107d4f9ca6c0a6b0bbdda, type: 3}
+  breaAudioClip: {fileID: 8300000, guid: 5338f4853f57a1d40afb48667411cd2f, type: 3}
 --- !u!82 &5802532416875857856
 AudioSource:
   m_ObjectHideFlags: 0
@@ -114,7 +115,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
