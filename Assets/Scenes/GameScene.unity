@@ -4861,7 +4861,7 @@ MonoBehaviour:
     vfxIndex: 1
     angle: -180
   - weather: 2
-    duration: 120
+    duration: 90
     removingColorBar: {r: 0.014462441, g: 0.19001338, b: 0.6132076, a: 1}
     ruedaSprite: {fileID: 21300000, guid: 3230575aa4ada42419580a9c54707a2a, type: 3}
     casaSprite: {fileID: 21300000, guid: 85fdf87ed30bdf148a34c48dad0f2125, type: 3}
@@ -4882,7 +4882,7 @@ MonoBehaviour:
     sfx: {fileID: 8300000, guid: c2bd32a619d43104da2990937d058697, type: 3}
     vfxIndex: 3
     angle: 0
-  mustBreakWindowSeason: 010000000200000003000000050000000600000007000000
+  mustBreakWindowSeason: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d000000
   currentWeatherIndex: -1
   currentWeatherCounter: -1
   currentWeather:

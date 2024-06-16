@@ -164,10 +164,10 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
         LeanTween.size(rectTransform, animSize, animDownTime).setEase(animCurve);
     }
     
-    public void DestroyWindow()
+    public void DestroyWindow(bool mute=false)
     {
         this.gameObject.SetActive(false);
-        GameManager.Instance.PlaySFX(breaAudioClip,5);
+        if (!mute) GameManager.Instance.PlaySFX(breaAudioClip,5);
     }
     
 }

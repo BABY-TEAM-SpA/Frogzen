@@ -20,8 +20,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float gameTime;
     [SerializeField] private int frogsDead;
     [SerializeField] private int windowsBroken;
-    
-    
+ 
+    private readonly Queue<int> windowsTypesToDestroyNext = new();
+
     [Serializable]                                        
     internal class AudioPlayers                           
     {                                                     
@@ -77,9 +78,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SetUpAllWindows();
-        DestroySomeWindow(0);
-        DestroySomeWindow(1);
-        DestroySomeWindow(2);
+        DestroySomeWindow(0,0,true);
+        DestroySomeWindow(1,0,true);
+        DestroySomeWindow(2,0,true);
         ClimateManager.Instance.ChangeWeather(true);
     }
 
@@ -107,15 +108,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void DestroySomeWindow(int frameDataindex = -1, int hasRepeat = 0)
+    public void DestroySomeWindow(int frameDataindex = -1, int hasRepeat = 0, bool mute = false)
     {
         if (frameDataindex == -1)
         {
-            frameDataindex = Random.Range(0, windowsFramesData.Length);
+            frameDataindex = PopWindowTypeToDestroy();
+            Debug.Log(frameDataindex);
         }
         WindowsFrames winFrameData = windowsFramesData[frameDataindex];
         int frameindex = Random.Range(0, winFrameData.windowsFrame.Length);
-        if (winFrameData.windowsFrame[frameindex].DestroyWindow())
+        if (winFrameData.windowsFrame[frameindex].DestroyWindow(mute))
         {
             windowsBroken += 1;
         }
@@ -150,6 +152,26 @@ public class GameManager : MonoBehaviour
         }                                                
     }                                                    
 
+    private int PopWindowTypeToDestroy()
+    {
+        if (windowsTypesToDestroyNext.Count == 0)
+        {
+            int nFrames = windowsFramesData.Length;
+
+            // indices from 0 to nFrames-1 with random order
+            int[] windowsTypes = Enumerable
+                .Range(0, nFrames)
+                .OrderBy(_ => Random.value)
+                .ToArray();
+            foreach (int type in windowsTypes)
+            {
+                windowsTypesToDestroyNext.Enqueue(type);
+            }
+
+        }
+
+        return windowsTypesToDestroyNext.Dequeue();
+    }
     
     public void PlayMusic()
     {

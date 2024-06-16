@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -15,6 +16,8 @@ public class WindowsDropArea : MonoBehaviour, IDropHandler
     
     [SerializeField] private WindowsType windowFrameType;
     public bool hasWindow;
+
+    public WindowsType WindowType => windowFrameType;
     
     public void OnDrop(PointerEventData eventData)
     {
@@ -36,12 +39,12 @@ public class WindowsDropArea : MonoBehaviour, IDropHandler
         hasWindow = true;
     }
 
-    public bool DestroyWindow()
+    public bool DestroyWindow(bool mute = false)
     {
         if (hasWindow)
         {
             WindowsMovementController window = transform.GetComponentInChildren<WindowsMovementController>();
-            window.DestroyWindow();
+            window.DestroyWindow(mute);
             hasWindow = false;
             return true;
         }
