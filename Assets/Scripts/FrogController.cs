@@ -109,7 +109,7 @@ public class FrogController : MonoBehaviour
     }
     public void Freeze()
     {
-        frogInstance.color = Color.cyan;//currentFrog.frogSprites[3];
+        UpdateSprite(3,Color.cyan);
         frogInstance.SetNativeSize();
         frozenBarObject.gameObject.SetActive(false);
         isFrozen = true;

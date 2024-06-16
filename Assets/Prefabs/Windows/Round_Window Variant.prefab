@@ -34,11 +34,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 197817856856815455, guid: 73e9288e9fb821f4d9e003cbfdbebc46, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 163
+      value: 164
       objectReference: {fileID: 0}
     - target: {fileID: 197817856856815455, guid: 73e9288e9fb821f4d9e003cbfdbebc46, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 195
+      value: 198
       objectReference: {fileID: 0}
     - target: {fileID: 197817856856815455, guid: 73e9288e9fb821f4d9e003cbfdbebc46, type: 3}
       propertyPath: m_LocalPosition.x
@@ -99,7 +99,7 @@ PrefabInstance:
     - target: {fileID: 6789628304274037103, guid: 73e9288e9fb821f4d9e003cbfdbebc46, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 12ea2bd3cb6de8e44ba98c243e114d5a, type: 3}
+      objectReference: {fileID: 21300000, guid: 57cb7e8ea6c688840961d3524ff78b6f, type: 3}
     - target: {fileID: 7073272379879725617, guid: 73e9288e9fb821f4d9e003cbfdbebc46, type: 3}
       propertyPath: m_Name
       value: Round_Window Variant

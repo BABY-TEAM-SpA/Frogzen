@@ -22,6 +22,7 @@ public class Climate
     public float duration;
     public Color removingColorBar =Color.white;
     public Sprite ruedaSprite;
+    public Sprite casaSprite;
     [Range(.5f,3f)] public float removingMultuplyDelay;
     [Range(1f,5f)] public float frozenMultiply;
     public AudioClip sfx;
@@ -40,7 +41,8 @@ public class ClimateManager : MonoBehaviour
     private float currentWeatherTimer=0;
 
     public List<GameObject> vfx;
-    
+
+    [SerializeField] private Image casa;
     [SerializeField] private Image rueda;
     [SerializeField] private Image flecha;
     [SerializeField] private TMP_Text timeText;
@@ -82,6 +84,7 @@ public class ClimateManager : MonoBehaviour
         }
         
         UpdateWeatherIndex();
+        
         currentWeather = climates[currentWeatherIndex];
         currentWeatherTimer = 0;
         GameManager.Instance.PlayMusic();
@@ -117,6 +120,7 @@ public class ClimateManager : MonoBehaviour
     private void UpdateUI()
     {
         rueda.sprite = currentWeather.ruedaSprite;
+        casa.sprite = currentWeather.casaSprite;
         LeanTween.rotateZ(flecha.gameObject, currentWeather.angle, currentWeather.duration);
 
     }
