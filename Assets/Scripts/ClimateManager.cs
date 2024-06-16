@@ -25,6 +25,7 @@ public class Climate
     public Sprite casaSprite;
     [Range(.5f,3f)] public float removingMultuplyDelay;
     [Range(1f,5f)] public float frozenMultiply;
+    [Range(1f,5f)] public float warmingMultiply=1f;
     public AudioClip sfx;
     public int vfxIndex;
     public int angle;

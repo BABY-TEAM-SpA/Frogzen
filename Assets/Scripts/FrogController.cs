@@ -65,7 +65,7 @@ public class FrogController : MonoBehaviour
                 }
                 else
                 {
-                    temperature += Time.deltaTime;
+                    temperature += Time.deltaTime* ClimateManager.Instance.currentWeather.warmingMultiply;
                     UpdateSprite(0, fillColor);
                 }
             }

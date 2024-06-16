@@ -4845,16 +4845,18 @@ MonoBehaviour:
     casaSprite: {fileID: 21300000, guid: 85fdf87ed30bdf148a34c48dad0f2125, type: 3}
     removingMultuplyDelay: 1
     frozenMultiply: 1
+    warmingMultiply: 1.5
     sfx: {fileID: 0}
     vfxIndex: 0
     angle: -90
   - weather: 1
-    duration: 90
+    duration: 120
     removingColorBar: {r: 0.23713954, g: 0.6886792, b: 0.556133, a: 1}
     ruedaSprite: {fileID: 21300000, guid: 615eb69ba7d54d14e940c223c20a312c, type: 3}
     casaSprite: {fileID: 21300000, guid: 85fdf87ed30bdf148a34c48dad0f2125, type: 3}
     removingMultuplyDelay: 1.5
     frozenMultiply: 1.4
+    warmingMultiply: 1.2
     sfx: {fileID: 0}
     vfxIndex: 1
     angle: -180
@@ -4865,16 +4867,18 @@ MonoBehaviour:
     casaSprite: {fileID: 21300000, guid: 85fdf87ed30bdf148a34c48dad0f2125, type: 3}
     removingMultuplyDelay: 0.5
     frozenMultiply: 1.2
+    warmingMultiply: 1.2
     sfx: {fileID: 8300000, guid: fad63b555f8aa724987adfa068a69f5a, type: 3}
     vfxIndex: 2
     angle: -270
   - weather: 3
-    duration: 120
+    duration: 60
     removingColorBar: {r: 0.6367924, g: 1, b: 0.9186849, a: 1}
     ruedaSprite: {fileID: 21300000, guid: 8a3cb4455e7f99940ae7a5ea11f4fe7b, type: 3}
     casaSprite: {fileID: 21300000, guid: e8fd452780a50b244a7de18820a1926c, type: 3}
-    removingMultuplyDelay: 2
+    removingMultuplyDelay: 1.7
     frozenMultiply: 1.6
+    warmingMultiply: 1
     sfx: {fileID: 8300000, guid: c2bd32a619d43104da2990937d058697, type: 3}
     vfxIndex: 3
     angle: 0
@@ -4889,6 +4893,7 @@ MonoBehaviour:
     casaSprite: {fileID: 0}
     removingMultuplyDelay: 1
     frozenMultiply: 1
+    warmingMultiply: 1
     sfx: {fileID: 0}
     vfxIndex: 0
     angle: 0
