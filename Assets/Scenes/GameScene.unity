@@ -2430,7 +2430,7 @@ GameObject:
   - component: {fileID: 322879571}
   - component: {fileID: 322879570}
   m_Layer: 5
-  m_Name: Image
+  m_Name: flecha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4840,8 +4840,10 @@ MonoBehaviour:
   climates:
   - weather: 0
     duration: 60
-    removingColorBar: {r: 0.26099145, g: 0.6509434, b: 0.38063583, a: 1}
+    removingColorBar: {r: 1, g: 1, b: 1, a: 1}
     ruedaSprite: {fileID: 21300000, guid: 9390c0839ca989340aad9cf97ed7c241, type: 3}
+    temperatureText: "14\xB0C"
+    temperatureTextColor: {r: 1, g: 1, b: 1, a: 1}
     casaSprite: {fileID: 21300000, guid: 85fdf87ed30bdf148a34c48dad0f2125, type: 3}
     removingMultuplyDelay: 1
     frozenMultiply: 1
@@ -4850,34 +4852,40 @@ MonoBehaviour:
     vfxIndex: 0
     angle: -90
   - weather: 1
-    duration: 90
-    removingColorBar: {r: 0.23713954, g: 0.6886792, b: 0.556133, a: 1}
+    duration: 60
+    removingColorBar: {r: 1, g: 0.9907055, b: 0.6933962, a: 1}
     ruedaSprite: {fileID: 21300000, guid: 615eb69ba7d54d14e940c223c20a312c, type: 3}
+    temperatureText: "8\xB0C"
+    temperatureTextColor: {r: 1, g: 1, b: 1, a: 1}
     casaSprite: {fileID: 21300000, guid: 85fdf87ed30bdf148a34c48dad0f2125, type: 3}
-    removingMultuplyDelay: 1.5
-    frozenMultiply: 1.4
-    warmingMultiply: 1.2
+    removingMultuplyDelay: 1.31
+    frozenMultiply: 1.7
+    warmingMultiply: 1.1
     sfx: {fileID: 0}
     vfxIndex: 1
     angle: -180
   - weather: 2
-    duration: 90
-    removingColorBar: {r: 0.014462441, g: 0.19001338, b: 0.6132076, a: 1}
+    duration: 60
+    removingColorBar: {r: 0.5990566, g: 0.64133483, b: 1, a: 1}
     ruedaSprite: {fileID: 21300000, guid: 3230575aa4ada42419580a9c54707a2a, type: 3}
+    temperatureText: "10\xB0C"
+    temperatureTextColor: {r: 1, g: 1, b: 1, a: 1}
     casaSprite: {fileID: 21300000, guid: 85fdf87ed30bdf148a34c48dad0f2125, type: 3}
     removingMultuplyDelay: 0.5
-    frozenMultiply: 1.2
+    frozenMultiply: 1.4
     warmingMultiply: 1.2
     sfx: {fileID: 8300000, guid: fad63b555f8aa724987adfa068a69f5a, type: 3}
     vfxIndex: 2
     angle: -270
   - weather: 3
-    duration: 60
-    removingColorBar: {r: 0.6367924, g: 1, b: 0.9186849, a: 1}
+    duration: 45
+    removingColorBar: {r: 0.29369882, g: 0.3773585, b: 0.3773585, a: 1}
     ruedaSprite: {fileID: 21300000, guid: 8a3cb4455e7f99940ae7a5ea11f4fe7b, type: 3}
+    temperatureText: "0\xB0C"
+    temperatureTextColor: {r: 1, g: 1, b: 1, a: 1}
     casaSprite: {fileID: 21300000, guid: e8fd452780a50b244a7de18820a1926c, type: 3}
-    removingMultuplyDelay: 1.7
-    frozenMultiply: 1.6
+    removingMultuplyDelay: 1.5
+    frozenMultiply: 2
     warmingMultiply: 1
     sfx: {fileID: 8300000, guid: c2bd32a619d43104da2990937d058697, type: 3}
     vfxIndex: 3
@@ -4890,6 +4898,8 @@ MonoBehaviour:
     duration: 600
     removingColorBar: {r: 0.0627451, g: 0.85098046, b: 0.6745098, a: 1}
     ruedaSprite: {fileID: 0}
+    temperatureText: 
+    temperatureTextColor: {r: 1, g: 1, b: 1, a: 1}
     casaSprite: {fileID: 0}
     removingMultuplyDelay: 1
     frozenMultiply: 1
@@ -4906,6 +4916,7 @@ MonoBehaviour:
   rueda: {fileID: 935579467}
   flecha: {fileID: 322879570}
   timeText: {fileID: 1099677785}
+  temperatureText: {fileID: 2112795662}
 --- !u!4 &745895028
 Transform:
   m_ObjectHideFlags: 0
@@ -5620,7 +5631,7 @@ GameObject:
   - component: {fileID: 935579468}
   - component: {fileID: 935579467}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Rueda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5640,11 +5651,12 @@ RectTransform:
   m_Children:
   - {fileID: 322879569}
   - {fileID: 1099677784}
+  - {fileID: 2112795661}
   m_Father: {fileID: 2147077669}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 827.8, y: 399.8}
+  m_AnchoredPosition: {x: 827.8, y: 421}
   m_SizeDelta: {x: 163, y: 188}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &935579467
@@ -6132,7 +6144,7 @@ GameObject:
   - component: {fileID: 1099677786}
   - component: {fileID: 1099677785}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TimeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6154,7 +6166,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -48.53}
+  m_AnchoredPosition: {x: 0, y: -24.8}
   m_SizeDelta: {x: 200, y: 83.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1099677785
@@ -10239,6 +10251,140 @@ Transform:
   m_Children: []
   m_Father: {fileID: 745895028}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2112795660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2112795661}
+  - component: {fileID: 2112795663}
+  - component: {fileID: 2112795662}
+  m_Layer: 5
+  m_Name: TemperatureText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2112795661
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112795660}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 935579466}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -119.2, y: 56.9}
+  m_SizeDelta: {x: 93, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2112795662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112795660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "88\xB0C"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 28.9
+  m_fontSizeBase: 28.9
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &2112795663
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112795660}
+  m_CullTransparentMesh: 1
 --- !u!1001 &2136297811
 PrefabInstance:
   m_ObjectHideFlags: 0

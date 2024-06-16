@@ -22,10 +22,12 @@ public class Climate
     public float duration;
     public Color removingColorBar =Color.white;
     public Sprite ruedaSprite;
+    public string temperatureText;
+    public Color temperatureTextColor =Color.white;
     public Sprite casaSprite;
     [Range(.5f,3f)] public float removingMultuplyDelay;
-    [Range(1f,5f)] public float frozenMultiply;
-    [Range(1f,5f)] public float warmingMultiply=1f;
+    [Range(1f,3f)] public float frozenMultiply;
+    [Range(1f,3f)] public float warmingMultiply=1f;
     public AudioClip sfx;
     public int vfxIndex;
     public int angle;
@@ -47,6 +49,7 @@ public class ClimateManager : MonoBehaviour
     [SerializeField] private Image rueda;
     [SerializeField] private Image flecha;
     [SerializeField] private TMP_Text timeText;
+    [SerializeField] private TMP_Text temperatureText;
     
     
 
@@ -120,6 +123,8 @@ public class ClimateManager : MonoBehaviour
 
     private void UpdateUI()
     {
+        temperatureText.text = currentWeather.temperatureText;
+        temperatureText.color = currentWeather.temperatureTextColor;
         rueda.sprite = currentWeather.ruedaSprite;
         casa.sprite = currentWeather.casaSprite;
         LeanTween.rotateZ(flecha.gameObject, currentWeather.angle, currentWeather.duration);

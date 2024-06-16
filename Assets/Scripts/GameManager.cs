@@ -89,7 +89,15 @@ public class GameManager : MonoBehaviour
         gameTime += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
-            Pause();
+            if (!isPaused)
+            {
+                Pause(); 
+            }
+            else
+            {
+                UnPause();
+            }
+            
         }
     }
 
