@@ -10,12 +10,17 @@ using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 
-
-
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     [SerializeField] private bool adminMode;
+    [SerializeField] private bool doesUseLifes;
+    [SerializeField] private List<Image> lifesImages = new List<Image>();
+    [SerializeField] private int lifes;
+    [SerializeField] private Image lifePrefab;
+    [SerializeField] private Transform lifeContainer; 
+    
+    
     [SerializeField] public Frog[] frogsData;
     [SerializeField] private float gameTime;
     [SerializeField] private int frogsDead;
@@ -82,6 +87,13 @@ public class GameManager : MonoBehaviour
         DestroySomeWindow(1,0,true);
         DestroySomeWindow(2,0,true);
         ClimateManager.Instance.ChangeWeather(true);
+        if (doesUseLifes)
+        {
+            for (int i = 0; i < lifes; i++)
+            {
+                AddNewLife(false);
+            }
+        }
     }
 
     private void Update()
@@ -283,26 +295,55 @@ public class GameManager : MonoBehaviour
     public void CheckTotalFrogs()
     {
         frogsDead += 1;
-        if (frogsDead == windowsBroken && !adminMode)
+        if (!adminMode)
         {
-            Time.timeScale = 0f;
-            endMenu.SetActive(true);
-            windowsEndText.text = windowsBroken.ToString();
-            timeEndText.text = GetGameTime();
-            foreach (AudioPlayers player in musicPlayers)
+            
+            if (doesUseLifes)
             {
-                player.audioSource.Stop();
+                int result = lifes - frogsDead;
+                if (result>0)
+                {
+                    lifesImages[frogsDead-1].color= Color.red;
+                    
+                }else if(result==0)
+                {
+                    lifesImages[frogsDead-1].color= Color.red;
+                    OnEndingGame();
+                }
             }
-            foreach (AudioPlayers player in sfxPlayer)
+            else
             {
-                player.audioSource.Stop();
+                if (frogsDead == windowsBroken)
+                {
+                    OnEndingGame();
+                }
             }
         }
     }
 
+    public void AddNewLife(bool mustAddlifeCounter=true)
+    {
+        if (doesUseLifes)
+        {
+            if(mustAddlifeCounter) lifes += 1;
+            Image instanceSprite= Instantiate(lifePrefab, lifeContainer);
+            lifesImages.Add(instanceSprite);
+        }
+    }
+    
     public void OnEndingGame()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 0f;
+        endMenu.SetActive(true);
+        windowsEndText.text = windowsBroken.ToString();
+        timeEndText.text = GetGameTime();
+        foreach (AudioPlayers player in musicPlayers)
+        {
+            player.audioSource.Stop();
+        }
+        foreach (AudioPlayers player in sfxPlayer)
+        {
+            player.audioSource.Stop();
+        }
     }
 }

@@ -38,6 +38,7 @@ public class ClimateManager : MonoBehaviour
     public static ClimateManager Instance { get; private set; }
     [SerializeField] private Climate[] climates;
     [SerializeField] private List<int> mustBreakWindowSeason =new List<int>();
+    [SerializeField] private List<int> mustGiveLife =new List<int>();
     [SerializeField] public int currentWeatherIndex=-1;
     [SerializeField] private int currentWeatherCounter=-1;
     public Climate currentWeather = null;
@@ -97,6 +98,10 @@ public class ClimateManager : MonoBehaviour
         if(mustBreakWindowSeason.Contains(currentWeatherCounter))
         {
             GameManager.Instance.DestroySomeWindow(-1);
+        }
+        if(mustGiveLife.Contains(currentWeatherCounter))
+        {
+            GameManager.Instance.AddNewLife();
         }
         UpdateUI();
     }
