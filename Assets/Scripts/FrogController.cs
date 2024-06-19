@@ -34,9 +34,18 @@ public class FrogController : MonoBehaviour
     [SerializeField] private Color frozenColor;
     private float temperature;
     private bool isFrozen;
+    private bool isShaking = false;
+    [SerializeField] private float shakeIntensity = 10f;
+    [SerializeField] private float shakeDuration = 0.1f;
     [SerializeField] private Frog currentFrog;
     private WindowsDropArea windowFrame;
     [SerializeField] private AudioClip freezeSound;
+    
+    // Referenza al RectTransform dell'immagine
+    private RectTransform rectTransform;
+
+    // Posizione iniziale
+    private Vector3 initialPosition;
     
 
     public void Start()
@@ -48,8 +57,10 @@ public class FrogController : MonoBehaviour
     {
         windowFrame = frame;
         currentFrog = frogData;
-        frogInstance.sprite = currentFrog.frogSprites[0];
+        frogInstance.sprite = currentFrog.frogSprites[4];
         frogInstance.SetNativeSize();
+        rectTransform = frogInstance.GetComponent<RectTransform>();
+        initialPosition = rectTransform.localPosition;
     }
     
     void Update()
@@ -66,7 +77,7 @@ public class FrogController : MonoBehaviour
                 else
                 {
                     temperature += Time.deltaTime* ClimateManager.Instance.currentWeather.warmingMultiply;
-                    UpdateSprite(0, fillColor);
+                    UpdateSprite(4, fillColor);
                 }
             }
             else
@@ -82,12 +93,15 @@ public class FrogController : MonoBehaviour
                     if (temperature > initialTemperature / 2)
                     {
                         UpdateSprite(1,coldColor);
+
                     }
                     else
                     {
                         if (temperature > 0)
                         {
+                            Shake();
                             UpdateSprite(2,frozenColor);
+                            
                         }
                         else
                         {
@@ -103,12 +117,40 @@ public class FrogController : MonoBehaviour
 
     public void UpdateSprite(int index, Color color)
     {
+        if(index!=2)StopShaking();
         frogInstance.sprite = currentFrog.frogSprites[index];
         frogInstance.SetNativeSize();
         frozenBarFill.color = color;
     }
+
+    private void Shake()
+    {
+        if (isShaking)
+        {
+            return;
+        }
+        isShaking = true;
+        Vector3 newPos = initialPosition + new Vector3( shakeIntensity,0, 0);
+        LeanTween.moveLocal(frogInstance.gameObject, newPos, shakeDuration)
+            .setEase(LeanTweenType.easeShake)
+            .setLoopClamp()
+            .setOnComplete(() =>
+            {
+                rectTransform.localPosition = initialPosition;
+                isShaking = false;
+                Shake();
+            });
+    }
+    
+    public void StopShaking()
+    {
+        isShaking = false;
+        LeanTween.cancel(frogInstance.gameObject);
+        rectTransform.localPosition = initialPosition;
+    }
     public void Freeze()
     {
+        StopShaking();
         UpdateSprite(3,Color.cyan);
         frogInstance.SetNativeSize();
         frozenBarObject.gameObject.SetActive(false);

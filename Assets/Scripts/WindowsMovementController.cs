@@ -131,11 +131,11 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
     private IEnumerator HoldRoutine()
     {
         loadingBar.fillAmount = 0f;
-        loadingBar.color = ClimateManager.Instance.currentWeather.removingColorBar;
+        loadingBar.color = ClimateManager.Instance.removingColorBar;
         loadingParent.gameObject.SetActive(true);
         float hold = holdTime * ClimateManager.Instance.currentWeather.removingMultuplyDelay;
         float elapsedTime = 0f;
-        while (elapsedTime < hold)
+        while (elapsedTime <= hold)
         {
             elapsedTime += Time.deltaTime;
             loadingBar.fillAmount = elapsedTime / hold;
@@ -164,10 +164,22 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
         LeanTween.size(rectTransform, animSize, animDownTime).setEase(animCurve);
     }
     
-    public void DestroyWindow(bool mute=false)
+    public void DestroyWindow(bool instant=false)
     {
-        this.gameObject.SetActive(false);
-        if (!mute) GameManager.Instance.PlaySFX(breaAudioClip,5);
+        if (instant)
+        {
+            this.gameObject.SetActive(false);
+            return;
+        }
+        if(this.TryGetComponent(out Image image))image.raycastTarget = false;
+        transform.SetParent(upperObject);
+        if (this.TryGetComponent(out Rigidbody2D rb)) rb.simulated = true;
     }
-    
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        GameManager.Instance.PlaySFX(breaAudioClip,5);
+        this.gameObject.SetActive(false);
+        
+    }
 }

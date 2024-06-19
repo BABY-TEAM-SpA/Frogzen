@@ -20,14 +20,13 @@ public class Climate
 {
     public WeatherState weather;
     public float duration;
-    public Color removingColorBar =Color.white;
     public Sprite ruedaSprite;
     public string temperatureText;
     public Color temperatureTextColor =Color.white;
     public Sprite casaSprite;
-    [Range(.5f,3f)] public float removingMultuplyDelay;
-    [Range(1f,3f)] public float frozenMultiply;
-    [Range(1f,3f)] public float warmingMultiply=1f;
+    [Range(0f,2f)] public float removingMultuplyDelay;
+    [Range(1f,2f)] public float frozenMultiply;
+    [Range(1f,2f)] public float warmingMultiply=1f;
     public AudioClip sfx;
     public int vfxIndex;
     public int angle;
@@ -43,6 +42,7 @@ public class ClimateManager : MonoBehaviour
     [SerializeField] private int currentWeatherCounter=-1;
     public Climate currentWeather = null;
     private float currentWeatherTimer=0;
+    public Color removingColorBar =Color.white;
 
     public List<GameObject> vfx;
 
@@ -52,8 +52,6 @@ public class ClimateManager : MonoBehaviour
     [SerializeField] private TMP_Text timeText;
     [SerializeField] private TMP_Text temperatureText;
     
-    
-
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -64,6 +62,12 @@ public class ClimateManager : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    public void Prepare()
+    {
+        if(GameSettings.Instance !=null) climates = GameSettings.Instance.GetClimates(); 
+        ChangeWeather(true);
     }
 
     private void Update()

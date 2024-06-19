@@ -82,11 +82,18 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        if(GameSettings.Instance !=null) lifes = GameSettings.Instance.GetLifes();
+        if (lifes > 0) doesUseLifes = true;
+        ClimateManager.Instance.Prepare();
+        StartGameplay();
+    }
+
+    void StartGameplay()
+    {
         SetUpAllWindows();
         DestroySomeWindow(0,0,true);
         DestroySomeWindow(1,0,true);
         DestroySomeWindow(2,0,true);
-        ClimateManager.Instance.ChangeWeather(true);
         if (doesUseLifes)
         {
             for (int i = 0; i < lifes; i++)

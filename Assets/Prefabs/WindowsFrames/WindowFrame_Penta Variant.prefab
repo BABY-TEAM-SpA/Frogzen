@@ -255,16 +255,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7342507192196938745, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342507192196938745, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7342507192196938745, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7342507192196938745, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -13.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7691160710539536527, guid: a73eba364ac651e4391cc76e4acf7d29, type: 3}
       propertyPath: m_Name
