@@ -12,22 +12,6 @@ using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
-    [SerializeField] private bool adminMode;
-    [SerializeField] private bool doesUseLifes;
-    [SerializeField] private List<Image> lifesImages = new List<Image>();
-    [SerializeField] private int lifes;
-    [SerializeField] private Image lifePrefab;
-    [SerializeField] private Transform lifeContainer; 
-    
-    
-    [SerializeField] public Frog[] frogsData;
-    [SerializeField] private float gameTime;
-    [SerializeField] private int frogsDead;
-    [SerializeField] private int windowsBroken;
- 
-    private readonly Queue<int> windowsTypesToDestroyNext = new();
-
     [Serializable]                                        
     internal class AudioPlayers                           
     {                                                     
@@ -42,10 +26,29 @@ public class GameManager : MonoBehaviour
         public WindowsDropArea[] windowsFrame = new WindowsDropArea[8];
         
     }
-    [SerializeField] public Transform upperObject;
+    
+    public static GameManager Instance { get; private set; }
+    [SerializeField] private bool adminMode;
+    [SerializeField] private float gameTime;
+    
+    [Header("Lifes configuration")]
+    [SerializeField] private bool doesUseLifes;
+    [SerializeField] private List<Image> lifesImages = new List<Image>();
+    private int lifes=3;
+    [SerializeField] private Image lifePrefab;
+    [SerializeField] private Sprite lifeDisabledSprite;
+    [SerializeField] private Transform lifeContainer; 
+    
+    [Header("Frogs Configuration")]
+    [SerializeField] public Frog[] frogsData;
+    [SerializeField] private int frogsDead;
 
+    [Header("Windows Configuration")]
+    [SerializeField] public Transform upperObject;
     [SerializeField] private WindowsFrames[] windowsFramesData = new WindowsFrames[3];
     [SerializeField] private WindowsMovementController[] windowsPrefabs = new WindowsMovementController[3];
+    private int windowsBroken;
+    private readonly Queue<int> windowsTypesToDestroyNext = new();
 
     [Header("Menus Configuration")]
     public bool isPaused;
@@ -54,8 +57,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text windowsEndText;
     public TMP_Text timeEndText;
 
-    [Header("Audio configurations")] 
-    
+    [Header("Audio configurations")]
     private Coroutine musicHandle;
     private Coroutine sfxHandle;
     [SerializeField] private float fadeMusicTime;
@@ -310,11 +312,11 @@ public class GameManager : MonoBehaviour
                 int result = lifes - frogsDead;
                 if (result>0)
                 {
-                    lifesImages[frogsDead-1].color= Color.red;
+                    lifesImages[frogsDead-1].sprite= lifeDisabledSprite;
                     
                 }else if(result==0)
                 {
-                    lifesImages[frogsDead-1].color= Color.red;
+                    lifesImages[frogsDead-1].sprite= lifeDisabledSprite;
                     OnEndingGame();
                 }
             }

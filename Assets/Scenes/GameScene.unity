@@ -5040,7 +5040,7 @@ MonoBehaviour:
     sfx: {fileID: 0}
     vfxIndex: 0
     angle: 0
-  removingColorBar: {r: 1, g: 1, b: 1, a: 1}
+  removingColorBar: {r: 0.2794144, g: 0.8584906, b: 0.4560817, a: 1}
   vfx:
   - {fileID: 2037604926}
   - {fileID: 684815076}
@@ -5090,10 +5090,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adminMode: 0
+  gameTime: 0
   doesUseLifes: 1
   lifesImages: []
-  lifes: 3
   lifePrefab: {fileID: 3183993719090622886, guid: 9fa20ea4c0feef242bcdf684322a20fb, type: 3}
+  lifeDisabledSprite: {fileID: 21300000, guid: edb90d67a4ba653478f9a6a62032139c, type: 3}
   lifeContainer: {fileID: 306372064}
   frogsData:
   - type: 1
@@ -5120,9 +5121,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 0561518ec97f7cb46b7014f8ea06b153, type: 3}
     - {fileID: 21300000, guid: 394b8b710c6fa5746bf1a90446aa8bc0, type: 3}
     coldnessFrogMultiplier: 1.5
-  gameTime: 0
   frogsDead: 0
-  windowsBroken: 0
   upperObject: {fileID: 169385220}
   windowsFramesData:
   - windowsType: 0
@@ -9309,7 +9308,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.49019608}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
