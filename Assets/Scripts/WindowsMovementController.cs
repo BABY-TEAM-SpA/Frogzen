@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerDownHandler, IPointerExitHandler, IPointerUpHandler
 {
@@ -19,8 +20,9 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
     [SerializeField] private GameObject loadingParent;
     [SerializeField] private Image loadingBar;
     private Coroutine holdCoroutine;
-        
-    [Header("Animation Variables")]
+
+    [Header("Animation Variables")] [SerializeField]
+    private Sprite breakSprite;
     [SerializeField] private LeanTweenType animCurve;
     [SerializeField] [Range(0f,5f)]private float animUpTime;
     [SerializeField] [Range(1f,2f)] private float scaleSizeBig;
@@ -171,9 +173,13 @@ public class WindowsMovementController : MonoBehaviour, IDragHandler, IEndDragHa
             this.gameObject.SetActive(false);
             return;
         }
-        if(this.TryGetComponent(out Image image))image.raycastTarget = false;
+        if(this.TryGetComponent(out Image image)){
+            image.raycastTarget = false;
+            image.sprite = breakSprite;
+        }
         transform.SetParent(upperObject);
         if (this.TryGetComponent(out Rigidbody2D rb)) rb.simulated = true;
+        LeanTween.rotateZ(this.gameObject, Random.Range(120, -120), 3);
     }
 
     public void OnTriggerEnter2D(Collider2D other)

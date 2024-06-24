@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: holdTime
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1054568839463691892, guid: 73e9288e9fb821f4d9e003cbfdbebc46, type: 3}
+      propertyPath: breakSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1916eb6815fbf834fbeda5a10d873c95, type: 3}
     - target: {fileID: 1087654378436273756, guid: 73e9288e9fb821f4d9e003cbfdbebc46, type: 3}
       propertyPath: m_Color.b
       value: 0.0692008
