@@ -72,7 +72,7 @@ public class ClimateManager : MonoBehaviour
 
     private void Update()
     {
-        timeText.text = GameManager.Instance.GetGameTime();
+        timeText.text = GameManager.Instance.GetGameTimeFormat();
         if (currentWeatherTimer <= currentWeather.duration)
         {
             currentWeatherTimer += Time.deltaTime;

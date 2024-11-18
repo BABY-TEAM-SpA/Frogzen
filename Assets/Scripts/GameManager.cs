@@ -292,13 +292,17 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public string GetGameTime()
+    public string GetGameTimeFormat()
     {
         int minutes = Mathf.FloorToInt(gameTime / 60);
         int seconds = Mathf.FloorToInt(gameTime % 60);
 
         // Formatea el resultado en mm:ss
         return string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+    public float GetGameTime()
+    {
+        return gameTime;
     }
 
     public void CheckTotalFrogs()
@@ -345,7 +349,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         endMenu.SetActive(true);
         windowsEndText.text = windowsBroken.ToString();
-        timeEndText.text = GetGameTime();
+        timeEndText.text = GetGameTimeFormat();
         foreach (AudioPlayers player in musicPlayers)
         {
             player.audioSource.Stop();
